@@ -17,5 +17,17 @@ namespace MVCSTOKTAKIP.Controllers
             return View(degerler);
 
         }
+        [HttpGet]
+        public ActionResult YeniKategori()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult YeniKategori(TBLKATEGORILER p1)
+        {
+            db.TBLKATEGORILER.Add(p1);
+            db.SaveChanges();
+            return View();
+        }
     }
 }

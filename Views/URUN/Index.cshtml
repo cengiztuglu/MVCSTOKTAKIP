@@ -10,7 +10,6 @@
         <th>ÜRÜN ADI</th>
         <th>MARKASI</th>
         <th>KATEGORİ</th>
-        <th>URUN ID</th>
         <th>FİYAT</th>
         <th>STOK</th>
         <th>EKLE</th>
@@ -28,12 +27,12 @@
                 <td>@urun.URUNKATEGORI</td>
                 <td>@urun.FIYAT</td>
                 <td>@urun.STOK</td>
-                
-
+                <td><a href="URUNLER/SIL/@urun.URUNID" class="btn btn-danger">SIL</a> </td>
+                <td><a href="URUNLER/GUNCELLE/@urun.URUNID" class="btn btn-success">GUNCELLE</a> </td>
             </tr>
-
         }
     </tbody>
-
 </table>
+
+<a href="/URUN/YENIURUN" class="btn btn-primary center-block">YENİ URUN EKLE</a>
 
