@@ -1,0 +1,26 @@
+﻿@using MVCSTOKTAKIP.Models.Entity
+@model List<TBLKATEGORILER>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class=" table table-bordered">
+    <tr>
+        <th> KATEGORİ ID</th>
+        <th>KATEGORİ ADI</th>
+    </tr>
+    <tbody>
+        @foreach (var ktgr in Model)
+        {
+            <tr>
+                <td>@ktgr.KATEGORIID</td>
+                <td>@ktgr.KATEGORIAD</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

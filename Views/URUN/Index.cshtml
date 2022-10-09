@@ -1,0 +1,36 @@
+﻿@using MVCSTOKTAKIP.Models.Entity
+@model List<TBLURUNLER>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<table class="table table-bordered">
+    <tr>
+        <th>URUN ID</th>
+        <th>ÜRÜN ADI</th>
+        <th>MARKASI</th>
+        <th>KATEGORİ</th>
+        <th>URUN ID</th>
+        <th>FİYAT</th>
+        <th>STOK</th>
+
+    </tr>
+    <tbody>
+        @foreach (var urun in Model)
+        {
+
+            <tr>
+                <th>@urun.URUNID</th>
+                <td>@urun.URUNAD</td>
+                <td>@urun.MARKA</td>
+                <td>@urun.URUNKATEGORI</td>
+                <td>@urun.FIYAT</td>
+                <td>@urun.STOK</td>
+
+            </tr>
+
+        }
+    </tbody>
+
+</table>
+

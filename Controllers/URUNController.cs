@@ -5,17 +5,17 @@ using System.Web;
 using System.Web.Mvc;
 using MVCSTOKTAKIP.Models.Entity;
 
+
 namespace MVCSTOKTAKIP.Controllers
 {
-    public class KategoriController : Controller
+    public class URUNController : Controller
     {
-        // GET: Kategori
+        // GET: URUN
         MvcDbStokEntities db = new MvcDbStokEntities();
         public ActionResult Index()
         {
-            var degerler = db.TBLKATEGORILER.ToList();
+            var degerler = db.TBLURUNLER.ToList();
             return View(degerler);
-
         }
     }
 }
