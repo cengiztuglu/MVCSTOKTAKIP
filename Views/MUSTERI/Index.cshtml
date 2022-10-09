@@ -1,0 +1,25 @@
+﻿@using MVCSTOKTAKIP.Models.Entity
+@model List<TBLMUSTERILER>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <td>MUSTERI ID</td>
+        <td>MUSTERI AD</td>
+        <td>MUSTERI SOYAD</td>
+    </tr>
+    <tbody>
+        @foreach (var musteri in Model)
+        {
+
+            <tr>
+                <th>@musteri.MUSTERIID</th>f
+                <td>@musteri.MUSTERIAD</td>
+                <td>@musteri.MUSTERISOYAD</td>
+            </tr>
+        }
+    </tbody>
+</table>
