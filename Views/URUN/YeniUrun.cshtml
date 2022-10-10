@@ -1,4 +1,4 @@
-﻿@model MVCSTOKTAKIP.Models.Entity.TBLKATEGORILER
+﻿@model MVCSTOKTAKIP.Models.Entity.TBLURUNLER
 {
     ViewBag.Title = "YeniUrun";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
@@ -15,7 +15,7 @@
     </div>
     <div>
         <label> KATEGORİ SEÇİNİZ  </label>
-      @Html.DropDownListFor(m => m.KATEGORIAD, (List<SelectListItem>)ViewBag.dgr, new {@class="form-control"}) @* linq sorgusukullanarak dropDownListe DB den veri atadık *@
+      @Html.DropDownListFor(m => m.TBLKATEGORILER.KATEGORIID, (List<SelectListItem>)ViewBag.dgr, new {@class="form-control"}) @* linq sorgusukullanarak dropDownListe DB den veri atadık *@
     </div>
     <div>
         <label> FİYATI GİRİNİZ </label>

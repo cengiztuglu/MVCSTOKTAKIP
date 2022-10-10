@@ -35,9 +35,11 @@ namespace MVCSTOKTAKIP.Controllers
         [HttpPost]
         public ActionResult YeniUrun(TBLURUNLER p1)
         {
+            var ktg = db.TBLKATEGORILER.Where(m => m.KATEGORIID == p1.TBLKATEGORILER.KATEGORIID).FirstOrDefault();// FirstorDefaul(liste içerisinde seçmiş olduğumuz ilk değeri getirir)
+            p1.TBLKATEGORILER = ktg;
             db.TBLURUNLER.Add(p1);
             db.SaveChanges();
-            return View();
+            return RedirectToAction("Index");//işlem yaptıktan sonra index sayfasına tekrar atar
         }
 
     }
