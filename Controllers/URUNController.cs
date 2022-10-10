@@ -41,6 +41,13 @@ namespace MVCSTOKTAKIP.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");//işlem yaptıktan sonra index sayfasına tekrar atar
         }
+        public ActionResult SIL(int id)
+        {
+            var urun = db.TBLURUNLER.Find(id);
+            db.TBLURUNLER.Remove(urun);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
     }
 }
