@@ -29,5 +29,12 @@ namespace MVCSTOKTAKIP.Controllers
             db.SaveChanges();
             return View();
         }
+        public ActionResult SIL(int id)
+        {
+            var kategori = db.TBLKATEGORILER.Find(id);
+            db.TBLKATEGORILER.Remove(kategori);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
