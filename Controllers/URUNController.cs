@@ -20,6 +20,15 @@ namespace MVCSTOKTAKIP.Controllers
         [HttpGet]
         public ActionResult YeniUrun()
         {
+            List<SelectListItem> degerler = (from i in db.TBLKATEGORILER.ToList()//tablo içinden kategorilerin listesini i değişkenine ata
+                                             select new SelectListItem
+                                             {
+                                                 Text = i.KATEGORIAD, 
+                                                 Value = i.KATEGORIID.ToString() //i nin kategori id ata
+                                             }).ToList();
+            ViewBag.dgr = degerler;  //diğer sayfaya taşıma işlemi yeni bir değer türettik
+                                             
+                                                    
             return View();
         }
 
