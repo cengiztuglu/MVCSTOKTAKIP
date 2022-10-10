@@ -17,5 +17,19 @@ namespace MVCSTOKTAKIP.Controllers
             var degerler = db.TBLURUNLER.ToList();
             return View(degerler);
         }
+        [HttpGet]
+        public ActionResult YeniUrun()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult YeniUrun(TBLURUNLER p1)
+        {
+            db.TBLURUNLER.Add(p1);
+            db.SaveChanges();
+            return View();
+        }
+
     }
 }
