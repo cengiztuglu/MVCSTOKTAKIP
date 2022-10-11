@@ -11,7 +11,8 @@ namespace MVCSTOKTAKIP.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class TBLMUSTERILER
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,7 +22,12 @@ namespace MVCSTOKTAKIP.Models.Entity
         }
     
         public int MUSTERIID { get; set; }
+
+        [Required(ErrorMessage ="Bu alaný boþ býrakamazsýn")]
+        [StringLength(50,ErrorMessage ="50 karakterden fazla giremezsiniz")]
         public string MUSTERIAD { get; set; }
+        [Required(ErrorMessage = "Bu alaný boþ býrakamazsýn")]
+        [StringLength(50, ErrorMessage = "50 karakterden fazla giremezsiniz")]
         public string MUSTERISOYAD { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

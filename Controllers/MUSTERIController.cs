@@ -25,6 +25,11 @@ namespace MVCSTOKTAKIP.Controllers
         [HttpPost]
         public ActionResult YeniMusteri(TBLMUSTERILER p1)
         {
+            if (!ModelState.IsValid)//eğer modelin durumunda doğrulama işlemi yapılmadıysa
+            {
+                return View("YeniMusteri");
+
+            }
             db.TBLMUSTERILER.Add(p1);
             db.SaveChanges();
             return View();

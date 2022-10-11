@@ -50,9 +50,35 @@ namespace MVCSTOKTAKIP.Controllers
         }
         public ActionResult UrünGetir(int id)
         {
-            var ktgr = db.TBLKATEGORILER.Find(id);
-            return View("KategoriGetir", ktgr);
+            var ktgr = db.TBLURUNLER.Find(id);
+
+            List<SelectListItem> degerler = (from i in db.TBLKATEGORILER.ToList()//tablo içinden kategorilerin listesini i değişkenine ata
+                                             select new SelectListItem
+                                             {
+                                                 Text = i.KATEGORIAD,
+                                                 Value = i.KATEGORIID.ToString() //i nin kategori id ata
+                                             }).ToList();
+            ViewBag.dgr = degerler;  //diğer sayfaya taşıma işlemi yeni bir değer türettik
+
+
+            return View("UrünGetir", ktgr);
+
+
         }
+
+        public ActionResult Güncelle(TBLURUNLER p1)
+        {
+            var urun = db.TBLURUNLER.Find(p1.URUNID);
+            urun.URUNAD = p1.URUNAD;
+            urun.MARKA = p1.MARKA;
+            var ktg = db.TBLKATEGORILER.Where(m => m.KATEGORIID == p1.TBLKATEGORILER.KATEGORIID).FirstOrDefault();// FirstorDefaul(liste içerisinde seçmiş olduğumuz ilk değeri getirir)
+            urun.URUNKATEGORI=ktg.KATEGORIID;
+            urun.FIYAT = p1.FIYAT;
+            urun.STOK = p1.STOK;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
 
     }
 }

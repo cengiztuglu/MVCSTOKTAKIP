@@ -1,4 +1,4 @@
-﻿
+﻿@model MVCSTOKTAKIP.Models.Entity.TBLMUSTERILER
 @{
     ViewBag.Title = "YeniMusteri";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
@@ -7,12 +7,14 @@
 <form class="form-group" method="post">
 
     <div>
-        <label>MÜSTERİ ADI</label>
-        <input type="text" name="MUSTERIAD" class="form-control" />
+        <label>Musteri Adı</label>
+        @Html.TextBoxFor(m => m.MUSTERIAD, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.MUSTERIAD, "", new { @style = "color:blue" })
     </div>
     <div>
-        <label> MUSTERİ SOYAD</label>
-        <input type="text" name="MUSTERISOYAD" class="form-control" />
+        <label>Musteri Soyadı  </label>
+        @Html.TextBoxFor(m => m.MUSTERISOYAD, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.MUSTERISOYAD, "", new { @style = "color:blue" })
     </div>
     <div style="margin-top:15px">
     <button class="btn-info"> MUSTERI EKLE </button>
