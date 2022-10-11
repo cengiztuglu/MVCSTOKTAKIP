@@ -1,0 +1,26 @@
+﻿@model MVCSTOKTAKIP.Models.Entity.TBLMUSTERILER
+@{
+    ViewBag.Title = "MusteriGetir";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@using (Html.BeginForm("Güncelle","MUSTERI",FormMethod.Post))
+            {
+                <div>
+                    @Html.LabelFor(m => m.MUSTERIID)
+                    @Html.TextAreaFor(m => m.MUSTERIID, new { @class = "form-control" })
+
+                    @Html.LabelFor(m => m.MUSTERIAD)
+                    @Html.TextAreaFor(m => m.MUSTERIAD, new { @class = "form-control" })
+
+                    @Html.LabelFor(m => m.MUSTERISOYAD)
+                    @Html.TextAreaFor(m => m.MUSTERISOYAD, new { @class = "form-control" })
+
+                </div>
+                <div>
+                    <button class="btn btn-warning"> MÜSTERİ GÜNCELLE </button>
+                </div>
+
+              
+            }
+

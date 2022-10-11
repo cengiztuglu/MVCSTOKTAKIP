@@ -11,6 +11,7 @@ namespace MVCSTOKTAKIP.Models.Entity
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations; //validationlar için kullanýlan kütüphane
     
     public partial class TBLKATEGORILER
     {
@@ -21,6 +22,7 @@ namespace MVCSTOKTAKIP.Models.Entity
         }
     
         public int KATEGORIID { get; set; }
+        [Required(ErrorMessage ="Kategori Adýný Boþ Býrakmayýnýz")]//db içine boþ karakter eklwmwmwk için kullandým
         public string KATEGORIAD { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

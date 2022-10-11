@@ -48,6 +48,11 @@ namespace MVCSTOKTAKIP.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult UrünGetir(int id)
+        {
+            var ktgr = db.TBLKATEGORILER.Find(id);
+            return View("KategoriGetir", ktgr);
+        }
 
     }
 }
