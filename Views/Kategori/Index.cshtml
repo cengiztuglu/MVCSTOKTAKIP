@@ -1,5 +1,8 @@
 ﻿@using MVCSTOKTAKIP.Models.Entity
-@model List<TBLKATEGORILER>
+@using PagedList;
+@using PagedList.Mvc;
+@model  PagedList.IPagedList<TBLKATEGORILER>
+
 
 
 @{
@@ -26,6 +29,7 @@
         }
     </tbody>
 </table>
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new {sayfa}))
 <a href="/Kategori/YeniKategori" class="btn btn-primary center-block" >YENİ KATEGORI EKLE</a>
 
 

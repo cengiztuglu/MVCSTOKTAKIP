@@ -1,5 +1,7 @@
 ﻿@using MVCSTOKTAKIP.Models.Entity
-@model List<TBLURUNLER>
+@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<TBLURUNLER>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
@@ -24,7 +26,8 @@
                 <th>@urun.URUNID</th>
                 <td>@urun.URUNAD</td>
                 <td>@urun.MARKA</td>
-                <td>@urun.TBLKATEGORILER.KATEGORIAD</td>@*INNER JOİN KULLANIMI // TABLOLAR İLİŞKİLİ OLDUĞU İÇİN URUN TABLOSUNDA ÜRÜN ID YE EŞİT OLAN ADI GETİRİR *@
+                <td>@urun.TBLKATEGORILER.KATEGORIAD</td>
+                @*INNER JOİN KULLANIMI // TABLOLAR İLİŞKİLİ OLDUĞU İÇİN URUN TABLOSUNDA ÜRÜN ID YE EŞİT OLAN ADI GETİRİR *@
                 <td>@urun.FIYAT</td>
                 <td>@urun.STOK</td>
                 <td><a href="/URUN/SIL/@urun.URUNID" class="btn btn-danger">SIL</a> </td>
@@ -33,6 +36,6 @@
         }
     </tbody>
 </table>
-
+@Html.PagedListPager((IPagedList)Model,sayfa=>Url.Action("Index", new {sayfa}))
 <a href="/URUN/YeniUrun" class="btn btn-primary center-block">YENİ URUN EKLE</a>
 

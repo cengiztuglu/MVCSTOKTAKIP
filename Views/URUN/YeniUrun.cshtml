@@ -1,29 +1,30 @@
-﻿@model MVCSTOKTAKIP.Models.Entity.TBLURUNLER
-{
-    ViewBag.Title = "YeniUrun";
+﻿
+@model MVCSTOKTAKIP.Models.Entity.TBLURUNLER
+@{
+    ViewBag.Title = "UrünGetir";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
 <form class="form-group" method="post">
     <div>
         <label> URUN AD </label>
-        <input type="text" class="form-control" name="URUNAD" />
+        <input type="text" class="form-control" name="URUNAD" required="" maxlength ="10" /> @* reguired kullanarak textbox boş geçilemez*@
     </div>
     <div>
         <label> ÜRÜN MARKA</label>
-        <input type="text" class="form-control" name="MARKA" />
+        <input type="text" class="form-control" name="MARKA" placeholder="Buraya Markayı yazınız" required=""/>
     </div>
     <div>
         <label> KATEGORİ SEÇİNİZ  </label>
-      @Html.DropDownListFor(m => m.TBLKATEGORILER.KATEGORIID, (List<SelectListItem>)ViewBag.dgr, new {@class="form-control"}) @* linq sorgusukullanarak dropDownListe DB den veri atadık *@
+        @Html.DropDownListFor(m => m.TBLKATEGORILER.KATEGORIID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" }) @* linq sorgusukullanarak dropDownListe DB den veri atadık *@
     </div>
     <div>
         <label> FİYATI GİRİNİZ </label>
-        <input type="text" class="form-control" name="FIYAT" />
+        <input type="text" class="form-control" name="FIYAT" required="" />
     </div>
     <div>
         <label> KAÇ ADET </label>
-        <input type="text" class="form-control" name="STOK" />
+        <input type="text" class="form-control" name="STOK" required="" />
     </div>
     <div style="margin-top:15px">
         <button class="btn btn-info"> Kategori Ekle  </button>

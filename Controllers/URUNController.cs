@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MVCSTOKTAKIP.Models.Entity;
+using PagedList;
+using PagedList.Mvc;
 
 
 namespace MVCSTOKTAKIP.Controllers
@@ -12,9 +14,9 @@ namespace MVCSTOKTAKIP.Controllers
     {
         // GET: URUN
         MvcDbStokEntities db = new MvcDbStokEntities();
-        public ActionResult Index()
+        public ActionResult Index(int sayfa=1)
         {
-            var degerler = db.TBLURUNLER.ToList();
+            var degerler = db.TBLURUNLER.ToList().ToPagedList(sayfa, 3);
             return View(degerler);
         }
         [HttpGet]
