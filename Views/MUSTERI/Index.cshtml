@@ -5,6 +5,14 @@
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
+@using (Html.BeginForm("Index","MUSTERI",FormMethod.Get))
+            {
+                <p>
+                    <b></b> Aranacak Müşteri Adı:@Html.TextBox("p")
+                    <input type="submit" value="ara"/>
+                </p>
+            }
+
 <table class="table table-bordered">
     <tr>
         <td>MUSTERI ID</td>
@@ -19,16 +27,16 @@
         {
 
             <tr>
-                <th>@musteri.MUSTERIID</th>f
+                <th>@musteri.MUSTERIID</th>
                 <td>@musteri.MUSTERIAD</td>
                 <td>@musteri.MUSTERISOYAD</td>
                 <td><a href="/MUSTERI/SIL/@musteri.MUSTERIID" class="btn btn-danger">SIL</a> </td>
                 <td><a href="/MUSTERI/MusteriGetir/@musteri.MUSTERIID" class="btn btn-success">GUNCELLE</a> </td>
                 <td>@Html.ActionLink("SİL BUTONU", "SIL", new { id = musteri.MUSTERIID }, new { @class = "btn btn-warning", onclick = "return confirm('gerçekten silmek istiyor musunuz')" })</td>
             </tr>
-           
 
-        }
+
+            }
     </tbody>
 </table>
 <a href="/MUSTERI/YeniMusteri" class="btn btn-primary center-block">YENİ MUSTERI EKLE</a>

@@ -12,10 +12,16 @@ namespace MVCSTOKTAKIP.Controllers
     {
         // GET: MUSTERI
         MvcDbStokEntities db = new MvcDbStokEntities();
-        public ActionResult Index()
+        public ActionResult Index(string p)
         {
-            var degerler = db.TBLMUSTERILER.ToList();
-            return View(degerler);
+            var degerler = from d in db.TBLMUSTERILER select d;
+            if (!string.IsNullOrEmpty(p)) //aranan değer varsa boş değilse
+            {
+                degerler = degerler.Where(m => m.MUSTERIAD.Contains(p));
+            }
+            return View(degerler.ToList());
+           // var degerler = db.TBLMUSTERILER.ToList();
+            //return View(degerler);
         }
         [HttpGet]
         public ActionResult YeniMusteri()
