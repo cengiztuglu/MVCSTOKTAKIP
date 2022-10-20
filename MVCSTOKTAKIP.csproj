@@ -139,7 +139,7 @@
     <Compile Include="Controllers\MUSTERIController.cs" />
     <Compile Include="Controllers\SatisController.cs" />
     <Compile Include="Controllers\URUNController.cs" />
-    <Compile Include="Controllers\YardımController.cs" />
+    <Compile Include="Controllers\YardimController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -240,7 +240,7 @@
     <Content Include="Views\MUSTERI\MusteriGetir.cshtml" />
     <Content Include="Views\URUN\UrünGetir.cshtml" />
     <Content Include="Views\Satis\Index.cshtml" />
-    <Content Include="Views\Yardım\Index.cshtml" />
+    <Content Include="Views\Yardim\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

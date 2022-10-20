@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace MVCSTOKTAKIP.Controllers
 {
-    public class YardımController : Controller
+    public class YardimController : Controller
     {
         // GET: Yardım
         public ActionResult Index()
